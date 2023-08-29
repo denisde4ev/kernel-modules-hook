@@ -2,10 +2,10 @@
 
 KVER="${KVER:-$(uname -r)}"
 
-if [ -e "/usr/lib/modules/backup/${KVER}" ]; then
+if [ -e /usr/lib/modules/backup/"${KVER}" ] && [ ! -e /usr/lib/modules/"${KVER}" ]; then
 	cp -a \
-		"/usr/lib/modules/backup/${KVER}" \
-		/usr/lib/modules/
+		/usr/lib/modules/backup/"${KVER}" \
+		/usr/lib/modules/"${KVER}"
 	;
 fi
 
