@@ -2,8 +2,8 @@
 
 KVER="${KVER:-$(uname -r)}"
 
-if test -e "/usr/lib/modules/backup/${KVER}"; then
-	rsync -AHXal --ignore-existing \
+if [ -e "/usr/lib/modules/backup/${KVER}" ]; then
+	cp -a \
 		"/usr/lib/modules/backup/${KVER}" \
 		/usr/lib/modules/
 	;
